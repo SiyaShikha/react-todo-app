@@ -93,6 +93,7 @@ class Todo extends Component {
   render() {
     return (
       <>
+        <h2>{this.props.title}</h2>
         <Input onSubmit={this.add} />
         <Tasks tasks={this.state.tasks} toggle={this.toggle} />
       </>
@@ -119,8 +120,7 @@ class Todos extends Component {
         <Input onSubmit={this.add} />
         {this.state.todos.map((todo) => (
           <div key={todo.todoId}>
-            <h2>{todo.title}</h2>
-            <Todo />
+            <Todo {...todo} />
           </div>
         ))}
       </>
